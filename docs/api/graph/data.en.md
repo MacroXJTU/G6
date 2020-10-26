@@ -3,13 +3,9 @@ title: read /save/ load Data
 order: 1
 ---
 
-<!-- ## graph.data(_data_) -->
-
 Load the data for graph.
 
-**Parameters**
-
-### data
+### graph.data(_data_)
 
 <description> _Object_ **required** </description>
 
@@ -41,7 +37,7 @@ const data = {
 graph.data(data);
 ```
 
-### save()
+### graph.save()
 
 Get the graph data.
 

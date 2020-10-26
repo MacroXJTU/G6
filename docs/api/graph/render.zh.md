@@ -1,9 +1,9 @@
 ---
-title: render/refresh/paint 渲染与画布更新
+title: 渲染与画布更新
 order: 10
 ---
 
-### render()
+### graph.render()
 
 根据提供的数据渲染视图。
 
@@ -13,7 +13,7 @@ order: 10
 graph.render();
 ```
 
-### renderCustomGroup(data, groupType)
+### graph.renderCustomGroup(data, groupType)
 
 根据提供的数据渲染组群。
 
@@ -63,7 +63,7 @@ const data = {
 graph.renderCustomGroup(data, 'circle');
 ```
 
-### refresh()
+### graph.refresh()
 
 当源数据中**现有**节点/边/ Combo 的数据项发生配置的变更时，根据新数据刷新视图。
 
@@ -77,7 +77,7 @@ graph.renderCustomGroup(data, 'circle');
 graph.refresh();
 ```
 
-### refreshItem(item)
+### graph.refreshItem(item)
 
 刷新指定元素。
 
@@ -95,7 +95,7 @@ const item = graph.findById('node');
 graph.refreshItem(item);
 ```
 
-### refreshPositions()
+### graph.refreshPositions()
 
 当节点位置发生变化时，刷新所有节点位置，并重计算边的位置。
 
@@ -107,7 +107,7 @@ graph.refreshItem(item);
 graph.refreshPositions();
 ```
 
-### paint()
+### graph.paint()
 
 仅重新绘制画布。当设置了元素样式或状态后，通过调用 `paint()` 方法，让修改生效。
 
@@ -128,7 +128,7 @@ graph.paint();
 graph.setAutoPaint(autoPaint);
 ```
 
-### setAutoPaint(auto)
+### graph.setAutoPaint(auto)
 
 设置是否在更新/删除后自动重绘，一般搭配 `paint()` 方法使用。
 

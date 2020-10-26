@@ -1,9 +1,9 @@
 ---
-title: graph.set[clear]Item(item, stack)
+title: 设置/清除元素状态
 order: 10
 ---
 
-### setItemState(item, state, value)
+### graph.setItemState(item, state, value)
 
 设置元素状态。支持单个状态多值的情况，详情参考 [G6 状态管理最佳实践](/zh/docs/manual/middle/states/state-new)。
 
@@ -28,7 +28,7 @@ graph.setItemState('node1', 'body', 'health');
 graph.setItemState('node2', 'body', 'ill');
 ```
 
-### clearItemStates(item, states)
+### graph.clearItemStates(item, states)
 
 清除元素状态，可以一次性清除多个状态。
 

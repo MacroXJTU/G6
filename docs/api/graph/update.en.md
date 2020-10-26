@@ -3,7 +3,7 @@ title: graph.update*
 order: 10
 ---
 
-### updateItem(item, model, stack)
+### graph.updateItem(item, model, stack)
 
 Update the item with new data model. If there are combos in the graph, after calling updateItem to update the position of a node, call [updateCombo(combo)](/en/docs/api/Graph#updatecombocombo) to update the sizes and positions of the related combos.
 
@@ -34,11 +34,11 @@ const item = graph.findById('node');
 graph.updateItem(item, model);
 ```
 
-### update(item, model, stack)
+### graph.update(item, model, stack)
 
 The same as updateItem(item, model).
 
-### updateCombos()
+### graph.updateCombos()
 
 Update the sizes and positions of all the combos according to the bboxes of its children.
 
@@ -49,7 +49,7 @@ Update the sizes and positions of all the combos according to the bboxes of its 
 graph.updateCombos();
 ```
 
-### updateCombo(combo)
+### graph.updateCombo(combo)
 
 Update the positions and sizes of the combo and all of its ancestors.
 
@@ -76,7 +76,7 @@ const comboId = node1.getModel().comboId;
 graph.updateCombo(comboId);
 ```
 
-### updateComboTree(item, parentId)
+### graph.updateComboTree(item, parentId)
 
 Update the hierarchy structure of the combo, such as move a combo into another one.
 

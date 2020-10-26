@@ -1,9 +1,9 @@
 ---
-title: graph.on/off 事件绑定/解绑
+title: 事件绑定/解绑
 order: 10
 ---
 
-### on(eventName, handler)
+### graph.on(eventName, handler)
 
 为图绑定事件监听。
 
@@ -37,7 +37,7 @@ graph.on('click', (evt) => {
 });
 ```
 
-### off(eventName, handler)
+### graph.off(eventName, handler)
 
 为图解除指定的事件监听。
 
@@ -66,7 +66,7 @@ graph.on('node:click', fn);
 graph.off('node:click', fn);
 ```
 
-### off(eventName)
+### graph.off(eventName)
 
 为图解除某事件的所有监听。
 
@@ -96,7 +96,7 @@ graph.on('node:click', fn2);
 graph.off('node:click');
 ```
 
-### off()
+### graph.off()
 
 为图解除所有监听。该函数无参数。
 

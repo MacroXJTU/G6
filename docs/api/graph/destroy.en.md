@@ -3,7 +3,7 @@ title: graph.clear() / destroy()
 order: 10
 ---
 
-### clear()
+### graph.clear()
 
 Clear all the items in the canvas. This function is used for reseting the data source and re-rendering the graph.
 
@@ -13,7 +13,7 @@ Clear all the items in the canvas. This function is used for reseting the data s
 graph.clear();
 ```
 
-### destroy()
+### graph.destroy()
 
 Destroy the graph.
 

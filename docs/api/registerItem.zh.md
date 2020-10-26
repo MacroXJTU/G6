@@ -1,6 +1,6 @@
 ---
-title: 自定义节点与边
-order: 10
+title: G6.registerNode/Edge/Combo
+order: 6
 ---
 
 本文介绍的相关方法是在自定义节点（registerNode）或自定义边（registerEdge）的过程中需要部分实现或复写的方法。

@@ -1,11 +1,11 @@
 ---
-title: graph.layout() / updateLayout(cfg)
+title: 执行/更新布局
 order: 10
 ---
 
 G6 3.1 内置了丰富的布局。关于如何使用 G6 中内置的布局，请参考  [Layout API](/zh/docs/api/layout/Layout)。
 
-### layout()
+### graph.layout()
 
 重新以当前配置的属性进行一次布局。
 
@@ -56,7 +56,7 @@ graph.on('node:dragend', (e) => {
 });
 ```
 
-### updateLayout(cfg)
+### graph.updateLayout(cfg)
 
 更新布局配置项。
 

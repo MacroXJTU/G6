@@ -1,6 +1,6 @@
 ---
 title: Graph Algorithm
-order: 6
+order: 9
 ---
 
 Graph algorithms provide one of the most effective methods for analyzing relational data. They describe how to process graphs to discover some qualitative or quantitative measures. Graph algorithms are based on graph theory and use the relationship between them to structure and change complex systems. We can use these algorithms to discover hidden information, verify business assumptions, and change behavior to make predictions.
@@ -330,12 +330,12 @@ References:
 
 **Parameters**
 
-| Name  | Type   | Required | Description    |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph Instance |
-| directed | boolean | false |  Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜
-| nodeIds |  string[] | false | The nodes that should be included in or excluded from the cycles. If not configured, return all of the cycles.｜
-| include | boolean | false | If it is `true`, the returned cycles shuld include one of the nodes in `nodeIds`, otherwise the cycles should not have any nodes in `nodeIds`. `true` by default.｜
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph Instance |
+| directed | boolean | false | Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜ |
+| nodeIds | string[] | false | The nodes that should be included in or excluded from the cycles. If not configured, return all of the cycles.｜ |
+| include | boolean | false | If it is `true`, the returned cycles shuld include one of the nodes in `nodeIds`, otherwise the cycles should not have any nodes in `nodeIds`. `true` by default.｜ |
 
 **Return**
 
@@ -345,15 +345,15 @@ References:
 **Usage**
 
 ```javascript
-const { detectAllCycles } = Algorithm
+const { detectAllCycles } = Algorithm;
 
-const allCycles = detectAllCycles(graph, true)   
+const allCycles = detectAllCycles(graph, true);
 
-// Find all cycles that includes node B 
-const allCycleIncludeB = detectAllCycles(graph, true, ['B'])
-    
-// Find all cycles that does not includes node B 
-const allCycleExcludeB = detectAllCycles(graph, false, ['B'], false)
+// Find all cycles that includes node B
+const allCycleIncludeB = detectAllCycles(graph, true, ['B']);
+
+// Find all cycles that does not includes node B
+const allCycleExcludeB = detectAllCycles(graph, false, ['B'], false);
 ```
 
 ### findShortestPath(graph, start, end, directed, weightPropertyName)
@@ -362,17 +362,18 @@ Compute the shortest path between two nodes in the graph.
 
 **Parameters**
 
-| Name  | Type   | Required | Description    |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph Instance |
-| start | INode / string | true | G6 Node Instance or node ID, indicating the start of the path｜
-| end | INode / string | true | G6 Node Instance or node ID, indicating the end of the path ｜
-| directed | boolean | false |  Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜
-| weightPropertyName | string | false | Configure the edge property as the edge weight. If not configured, every edge has weight 1.｜
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph Instance |
+| start | INode / string | true | G6 Node Instance or node ID, indicating the start of the path ｜ |
+| end | INode / string | true | G6 Node Instance or node ID, indicating the end of the path ｜ |
+| directed | boolean | false | Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜ |
+| weightPropertyName | string | false | Configure the edge property as the edge weight. If not configured, every edge has weight 1.｜ |
 
 **Return**
 
 - Type of return value: Object，
+
 ```
  {
   length: number, // the length of the path
@@ -387,35 +388,35 @@ const data = {
   nodes: [
     {
       id: 'A',
-      label: 'A'
+      label: 'A',
     },
     {
       id: 'B',
-      label: 'B'
+      label: 'B',
     },
     {
       id: 'C',
-      label: 'C'
+      label: 'C',
     },
     {
       id: 'D',
-      label: 'D'
+      label: 'D',
     },
     {
       id: 'E',
-      label: 'E'
+      label: 'E',
     },
     {
       id: 'F',
-      label: 'F'
+      label: 'F',
     },
     {
       id: 'G',
-      label: 'G'
+      label: 'G',
     },
     {
       id: 'H',
-      label: 'H'
+      label: 'H',
     },
   ],
   edges: [
@@ -451,21 +452,21 @@ const data = {
       source: 'D',
       target: 'E',
     },
-  ]
-}
+  ],
+};
 
 const graph = new G6.Graph({
-    container: 'container',
-    width: 500,
-    height: 500
-  })
-graph.data(data)
-graph.render()
+  container: 'container',
+  width: 500,
+  height: 500,
+});
+graph.data(data);
+graph.render();
 
 const { findShortestPath } = Algorithm;
 // Find the shortest path between node A and node C in this undirected graph
-const { length, path } = findShortestPath(graph, 'A', 'C')
-console.log(length, path)
+const { length, path } = findShortestPath(graph, 'A', 'C');
+console.log(length, path);
 // Expected output: 2, ['A', 'B', 'C']
 ```
 
@@ -475,17 +476,17 @@ Find all paths between two nodes in the graph.
 
 **Parameters**
 
-| Name  | Type   | Required | Description    |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph Instance |
-| start | INode / string | true | G6 Node Instance or node ID, indicating the start of the path｜
-| end | INode / string | true | G6 Node Instance or node ID, indicating the end of the path ｜
-| directed | boolean | false |  Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph Instance |
+| start | INode / string | true | G6 Node Instance or node ID, indicating the start of the path ｜ |
+| end | INode / string | true | G6 Node Instance or node ID, indicating the end of the path ｜ |
+| directed | boolean | false | Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜ |
 
 **Return**
 
 - Type of return value: string[][]
-- Return a list of paths, in which each path is an array of node IDs. 
+- Return a list of paths, in which each path is an array of node IDs.
 
 **Usage**
 
@@ -494,35 +495,35 @@ const data = {
   nodes: [
     {
       id: 'A',
-      label: 'A'
+      label: 'A',
     },
     {
       id: 'B',
-      label: 'B'
+      label: 'B',
     },
     {
       id: 'C',
-      label: 'C'
+      label: 'C',
     },
     {
       id: 'D',
-      label: 'D'
+      label: 'D',
     },
     {
       id: 'E',
-      label: 'E'
+      label: 'E',
     },
     {
       id: 'F',
-      label: 'F'
+      label: 'F',
     },
     {
       id: 'G',
-      label: 'G'
+      label: 'G',
     },
     {
       id: 'H',
-      label: 'H'
+      label: 'H',
     },
   ],
   edges: [
@@ -558,20 +559,20 @@ const data = {
       source: 'D',
       target: 'E',
     },
-  ]
-}
+  ],
+};
 
 const graph = new G6.Graph({
-    container: 'container',
-    width: 500,
-    height: 500
-  })
-graph.data(data)
-graph.render()
+  container: 'container',
+  width: 500,
+  height: 500,
+});
+graph.data(data);
+graph.render();
 
 const { findAllPath } = Algorithm;
-const allPaths = findAllPath(graph, 'A', 'E')
-console.log(allPaths)
+const allPaths = findAllPath(graph, 'A', 'E');
+console.log(allPaths);
 // Expected output: [['A', 'D', 'F', 'E'], ['A', 'D', 'E'], ['A', 'E']]
 ```
 
@@ -581,20 +582,21 @@ Find the connect component of the graph. In the case of a directed graph, the st
 
 Translated with www.DeepL.com/Translator (free version)
 
-Reference: 
+Reference:
+
 - Detect the strongly connected components in a directed graph: [Tarjan's Algorithm](http://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)
 
- **Parameters**
+  **Parameters**
 
-| Name  | Type   | Required | Description    |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph Instance |
-| directed | boolean | false |  Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph Instance |
+| directed | boolean | false | Whether the graph is directed, use the value of `graph.get('directed')` by default. ｜ |
 
 **Return**
 
 - Type of return value: INode[][]
-- Return a list of connected components or strongly-connect components. Each component is a list of node instances. 
+- Return a list of connected components or strongly-connect components. Each component is a list of node instances.
 
 **Usage**
 
@@ -675,33 +677,34 @@ graph.render();
 
 // Connected components
 const components = getConnectedComponents(graph, false);
-components.forEach((component => {
-  console.log(component.map(node => node.get('id')))
-}))
+components.forEach((component) => {
+  console.log(component.map((node) => node.get('id')));
+});
 // Expected output: ['A', 'B', 'C', 'D', 'E', 'F'], ['G', 'H']
-  
+
 // Strongly-connected components
 const components2 = getConnectedComponents(graph, true);
-components2.forEach((component => {
-  console.log(component.map(node => node.get('id')))
-}))
+components2.forEach((component) => {
+  console.log(component.map((node) => node.get('id')));
+});
 // Expected output: ['A'], ['B'], ['C'], ['D', 'E', 'F'], ['G', 'H']
 ```
 
 ### pageRank
 
-The PageRank algorithm assumes that the importance of the current node is determined by the importance of other nodes pointing to it, and that the more inbound links a node receives from other nodes, the more important it is. PageRank is determined by  counting the number and quality of links to a node.
+The PageRank algorithm assumes that the importance of the current node is determined by the importance of other nodes pointing to it, and that the more inbound links a node receives from other nodes, the more important it is. PageRank is determined by counting the number and quality of links to a node.
 
-Reference: 
+Reference:
+
 - [PageRank](https://en.wikipedia.org/wiki/PageRank)
 
- **Parameters**
+  **Parameters**
 
-| Name  | Type   | Required | Description |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph Instance |
-| epsilon | number | false | The precision level used to identify whether the calculation is converged. ｜
-| linkProb | number | false | The the probability that the outgoing links will be visited next, 0.85 by default.｜
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph Instance |
+| epsilon | number | false | The precision level used to identify whether the calculation is converged. ｜ |
+| linkProb | number | false | The the probability that the outgoing links will be visited next, 0.85 by default.｜ |
 
 **Return**
 

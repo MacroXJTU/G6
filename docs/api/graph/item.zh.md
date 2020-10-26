@@ -1,9 +1,67 @@
 ---
-title: combo 相关方法
+title: 配置节点/边/ Combo
 order: 10
 ---
 
-### combo(comboFn)
+### graph.node(nodeFn)
+
+设置各个节点样式及其他配置，以及在各个状态下节点的 KeyShape 的样式。
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>提示:</strong></span> 该方法必须**在 render 之前调用**，否则不起作用。
+
+**参数**
+
+| 名称   | 类型     | 是否必选 | 描述               |
+| ------ | -------- | -------- | ------------------ |
+| nodeFn | Function | true     | 返回每个节点的配置 |
+
+**用法**
+
+```javascript
+graph.node((node) => {
+  return {
+    id: node.id,
+    type: 'rect',
+    style: {
+      fill: 'blue',
+    },
+  };
+});
+
+graph.data(data);
+graph.render();
+```
+
+### graph.edge(edgeFn)
+
+设置各个边样式及其他配置，以及在各个状态下节点的 KeyShape 的样式。
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>提示:</strong></span> 该方法必须**在 render 之前调用**，否则不起作用。
+
+**参数**
+
+| 名称   | 类型     | 是否必选 | 描述             |
+| ------ | -------- | -------- | ---------------- |
+| edgeFn | Function | true     | 返回每条边的配置 |
+
+**用法**
+
+```javascript
+graph.edge((edge) => {
+  return {
+    id: edge.id,
+    type: 'cubic-horizontal',
+    style: {
+      stroke: 'green',
+    },
+  };
+});
+
+graph.data(data);
+graph.render();
+```
+
+### graph.combo(comboFn)
 
 设置各个 combo 样式及其他配置，以及在各个状态下节点的 KeyShape 的样式。
 
@@ -32,7 +90,7 @@ graph.data(data);
 graph.render();
 ```
 
-### collapseCombo(combo)
+### graph.collapseCombo(combo)
 
 收起指定的 Combo。
 
@@ -48,7 +106,7 @@ graph.render();
 graph.collapseCombo('combo1')
 ```
 
-### expandCombo(combo)
+### graph.expandCombo(combo)
 
 展开指定的 Combo。
 
@@ -64,7 +122,7 @@ graph.collapseCombo('combo1')
 graph.expandCombo('combo1')
 ```
 
-### collapseExpandCombo(combo)
+### graph.collapseExpandCombo(combo)
 
 展开或收缩指定的 Combo。
 
@@ -80,7 +138,7 @@ graph.expandCombo('combo1')
 graph.collapseExpandCombo('combo1')
 ```
 
-### createCombo(combo, elements)
+### graph.createCombo(combo, elements)
 
 根据已经存在的节点或 combo 创建新的 combo。
 
@@ -106,7 +164,7 @@ graph.createCombo({
 }, ['node1', 'node2', 'combo2'])
 ```
 
-### uncombo(combo)
+### graph.uncombo(combo)
 
 拆解 Combo，即拆分组/解组。调用后，combo 本身将被删除，而该分组内部的子元素将会成为该分组父分组（若存在）的子元素。
 
@@ -122,7 +180,7 @@ graph.createCombo({
 graph.uncombo('combo1')
 ```
 
-### collapseGroup(groupId)
+### graph.collapseGroup(groupId)
 
 收起分组，收起分组后，隐藏分组中的所有节点和边，分组外部与分组内节点有连线的则临时连接到分组上面。
 
@@ -138,7 +196,7 @@ graph.uncombo('combo1')
 graph.collapseGroup('groupId');
 ```
 
-### expandGroup(groupId)
+### graph.expandGroup(groupId)
 
 展开分组，显示分组中的所有节点和边，恢复收起前的连接情况。
 

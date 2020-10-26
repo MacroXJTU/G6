@@ -1,9 +1,9 @@
 ---
-title: on/off
+title: graph.on/off()
 order: 10
 ---
 
-### on(eventName, handler)
+### graph.on(eventName, handler)
 
 Bind event listeners for graph.
 
@@ -41,7 +41,7 @@ graph.on('click', (evt) => {
 });
 ```
 
-### off(eventName, handler)
+### graph.off(eventName, handler)
 
 Unbind the specific listener.
 
@@ -74,7 +74,7 @@ graph.on('node:click', fn);
 graph.off('node:click', fn);
 ```
 
-### off(eventName)
+### graph.off(eventName)
 
 Unbind all the listeners for the graph.
 
@@ -108,7 +108,7 @@ graph.on('node:click', fn2);
 graph.off('node:click');
 ```
 
-### off()
+### graph.off()
 
 Unbind all the event listeners of the graph. There is no parameter for this function.
 

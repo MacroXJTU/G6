@@ -3,11 +3,11 @@ title: animation
 order: 10
 ---
 
-### positionsAnimate()
+### graph.positionsAnimate()
 
 Update the node positions according to the data model animatively. The `animateCfg` of the graph will be the animation configurations.
 
-### stopAnimate()
+### graph.stopAnimate()
 
 Stop the animation on the canvas.
 
@@ -17,6 +17,6 @@ Stop the animation on the canvas.
 graph.stopAnimate();
 ```
 
-### isAnimating()
+### graph.isAnimating()
 
 Return if the graph is animating.

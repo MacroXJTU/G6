@@ -3,7 +3,7 @@ title: graph.get*/set*
 order: 10
 ---
 
-### getNodes()
+### graph.getNodes()
 
 Get all the node items in the graph.
 
@@ -20,7 +20,7 @@ Get all the node items in the graph.
 const nodes = graph.getNodes();
 ```
 
-### getEdges()
+### graph.getEdges()
 
 Get all the edge items in the graph.
 
@@ -37,7 +37,7 @@ Get all the edge items in the graph.
 const edges = graph.getEdges();
 ```
 
-### getCombos()
+### graph.getCombos()
 
 Get all the combo items in the graph.
 
@@ -52,7 +52,7 @@ Get all the combo items in the graph.
 const combos = graph.getCombos();
 ```
 
-### getComboChildren(combo)
+### graph.getComboChildren(combo)
 
 Get the children of the `combo`.
 
@@ -84,7 +84,7 @@ const elements: {
 } = graph.getComboChildren('combo1')
 ```
 
-### getNeighbors(node, type)
+### graph.getNeighbors(node, type)
 
 **Parameters**
 
@@ -104,7 +104,7 @@ const elements: {
 const neighbors = graph.getNeighbors('node1', 'source');
 ```
 
-### get(key)
+### graph.get(key)
 
 Get an property of graph by key.
 
@@ -127,7 +127,7 @@ const canvas = graph.get('canvas');
 const autoPaint = graph.get('autoPaint');
 ```
 
-### set(key, val)
+### graph.set(key, val)
 
 Set the value to an property.
 
@@ -151,7 +151,7 @@ graph.set('customGroup', group);
 graph.set('nodeIdList', [1, 3, 5]);
 ```
 
-### getContainer()
+### graph.getContainer()
 
 Get the DOM container of the graph.
 
@@ -165,7 +165,7 @@ No parameter.
 graph.getContainer();
 ```
 
-### getGroup()
+### graph.getGroup()
 
 Get the root [graphics group](/en/docs/manual/advanced/keyconcept/graphics-group) of the graph.
 
@@ -179,7 +179,7 @@ No parameter.
 graph.getGroup();
 ```
 
-### getMinZoom()
+### graph.getMinZoom()
 
 Get the `minZoom` for the graph, which is the lower limit of the zoom ratio.
 
@@ -193,7 +193,7 @@ No parameter
 graph.getMinZoom();
 ```
 
-### setMinZoom(ratio)
+### graph.setMinZoom(ratio)
 
 Set the `minZoom` for the graph, which is the lower limit of the zoom ratio.
 
@@ -209,7 +209,7 @@ Set the `minZoom` for the graph, which is the lower limit of the zoom ratio.
 graph.setMinZoom(0.001);
 ```
 
-### getMaxZoom()
+### graph.getMaxZoom()
 
 Get the `maxZoom` for the graph, which is the upper limit of the zoom ratio.
 
@@ -223,7 +223,7 @@ No parameter.
 graph.getMaxZoom();
 ```
 
-### setMaxZoom(ratio)
+### graph.setMaxZoom(ratio)
 
 Set the `maxZoom` for the graph, which is the upper limit of the zoom ratio.
 
@@ -239,7 +239,7 @@ Set the `maxZoom` for the graph, which is the upper limit of the zoom ratio.
 graph.setMaxZoom(1000);
 ```
 
-### getWidth()
+### graph.getWidth()
 
 Get the current width of the graph.
 
@@ -253,7 +253,7 @@ No parameter.
 graph.getWidth();
 ```
 
-### getHeight()
+### graph.getHeight()
 
 Get the current height of the graph.
 

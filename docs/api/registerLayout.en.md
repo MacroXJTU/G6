@@ -1,6 +1,6 @@
 ---
-title: registerLayout
-order: 9
+title: G6.registerLayout
+order: 7
 ---
 
 ## G6.registerLayout(layoutName, layout)
@@ -68,3 +68,59 @@ G6.registerLayout('layoutName', {
   },
 });
 ```
+
+## Initialize
+
+### init(data)
+
+Initialize the layout.
+
+**Paramter**
+
+| Name | Type   | Required | Description             |
+| ---- | ------ | -------- | ----------------------- |
+| data | Object | true     | The data for the layout |
+
+### getDefaultCfg()
+
+Get the default configurations of the layout.
+
+**Return**
+
+| Name | Type   | Required | Description                |
+| ---- | ------ | -------- | -------------------------- |
+| cfg  | Object | true     | The default configurations |
+
+## Layout
+
+### execute()
+
+Execute the layout.
+
+### layout(data)
+
+Execute layout according to the data.
+
+**Paramter**
+
+| Name | Type   | Required | Description             |
+| ---- | ------ | -------- | ----------------------- |
+| data | Object | true     | The data to be arranged |
+
+## Update
+
+### updateCfg(cfg)
+
+Update the configurations for layout.
+
+**Paramter**
+
+| Name | Type   | Required | Description        |
+| ---- | ------ | -------- | ------------------ |
+| cfg  | Object | true     | New configurations |
+
+## Destroy
+
+### destroy()
+
+Destroy the layout.

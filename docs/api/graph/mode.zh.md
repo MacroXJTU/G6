@@ -1,9 +1,9 @@
 ---
-title: Mode
+title: 设置/获取图行为模式
 order: 10
 ---
 
-### setMode(mode)
+### graph.setMode(mode)
 
 切换图行为模式。主要用于不同模式下的行为切换，如从编辑模式下切换到只读模式。
 
@@ -29,7 +29,7 @@ const graph = new G6.Graph({
 graph.setMode('custom')
 ```
 
-### getCurrentMode()
+### graph.getCurrentMode()
 
 获取当前的行为模式。
 

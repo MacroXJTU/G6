@@ -3,7 +3,7 @@ title: 放缩、平移、变换画布
 order: 10
 ---
 
-### getZoom()
+### graph.getZoom()
 
 获取当前视口的缩放比例。
 
@@ -21,7 +21,7 @@ order: 10
 const zoom = graph.getZoom();
 ```
 
-### zoom(ratio, center)
+### graph.zoom(ratio, center)
 
 改变视口的缩放比例，在当前画布比例下缩放，是相对比例。
 
@@ -42,7 +42,7 @@ graph.zoom(3, { x: 100, y: 100 });
 graph.zoom(0.5);
 ```
 
-### zoomTo(toRatio, center)
+### graph.zoomTo(toRatio, center)
 
 缩放视窗窗口到一个固定比例。
 
@@ -63,7 +63,7 @@ graph.zoomTo(3, { x: 100, y: 100 });
 graph.zoomTo(0.5);
 ```
 
-### changeSize(width, height)
+### graph.changeSize(width, height)
 
 改变画布大小。
 
@@ -80,7 +80,7 @@ graph.zoomTo(0.5);
 graph.changeSize(600, 350);
 ```
 
-### translate(dx, dy)
+### graph.translate(dx, dy)
 
 采用**相对位移**来平移画布。
 
@@ -97,7 +97,7 @@ graph.changeSize(600, 350);
 graph.translate(100, 100);
 ```
 
-### moveTo(x, y)
+### graph.moveTo(x, y)
 
 采用**绝对位移**将画布移动到指定坐标。
 
@@ -114,7 +114,7 @@ graph.translate(100, 100);
 graph.moveTo(200, 300);
 ```
 
-### fitView(padding)
+### graph.fitView(padding)
 
 让画布内容适应视口。
 
@@ -140,7 +140,7 @@ graph.fitView([20, 10]);
 graph.fitView([20, 10, 20, 15]);
 ```
 
-### fitCenter()
+### graph.fitCenter()
 
 *v3.5.1 后支持。*平移图到中心将对齐到画布中心，但不缩放。优先级低于 fitView。
 
@@ -149,4 +149,31 @@ graph.fitView([20, 10, 20, 15]);
 ```javascript
 // 在渲染和动画完成后调用
 graph.fitCenter();
+```
+
+### graph.focusItem(item, animate, animateCfg)
+
+移动图，使得 item 对齐到视口中心，该方法可用于做搜索后的缓动动画。
+
+**参数**
+
+| 名称 | 类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- |
+| item | string / Object | true | 元素 ID 或元素实例 |
+| animate | boolean | false | 是否带有动画。若未配置，则跟随 graph 的 `animate` 参数 |
+| animateCfg | Object | false | 若带有动画，可配置动画，参见[基础动画教程](/zh/docs/manual/advanced/animation#animatecfg)。若未配置，则跟随 graph 的 `animateCfg` 参数 |
+
+**用法**
+
+```javascript
+graph.focusItem(item);
+
+// 动画地移动
+graph.focusItem(item, true);
+
+// 动画地移动，并配置动画
+graph.focusItem(item, true, {
+  easing: 'easeCubic',
+  duration: 400,
+});
 ```

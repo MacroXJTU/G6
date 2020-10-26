@@ -3,7 +3,7 @@ title: 导出图片
 order: 10
 ---
 
-### downloadFullImage(name, type, imageConfig)
+### graph.downloadFullImage(name, type, imageConfig)
 
 将画布上的元素导出为图片。
 
@@ -31,7 +31,7 @@ graph.downloadFullImage('tree-graph', {
 });
 ```
 
-### downloadImage(name, type, backgroundColor)
+### graph.downloadImage(name, type, backgroundColor)
 
 将画布上的元素导出为图片。
 
@@ -49,7 +49,7 @@ graph.downloadFullImage('tree-graph', {
 graph.downloadImage();
 ```
 
-### toFullDataURL(callback, type, imageConfig)
+### graph.toFullDataURL(callback, type, imageConfig)
 
 将画布上元素生成为图片的 URL。
 
@@ -88,7 +88,7 @@ graph.toFullDataUrl(
 );
 ```
 
-### toDataURL(type, backgroundColor)
+### graph.toDataURL(type, backgroundColor)
 
 将画布上元素生成为图片的 URL。
 

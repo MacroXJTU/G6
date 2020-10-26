@@ -1,9 +1,9 @@
 ---
-title: graph.*Behaviors 交互行为相关方法
+title: 添加/移除交互行为
 order: 10
 ---
 
-### addBehaviors(behaviors, modes)
+### graph.addBehaviors(behaviors, modes)
 
 新增行为，将单个或多个行为添加到单个或多个模式中。
 
@@ -30,7 +30,7 @@ graph.addBehaviors('brush-select', ['default', 'select']);
 graph.addBehaviors(['brush-select', 'click-select'], ['default', 'select']);
 ```
 
-### removeBehaviors(behaviors, modes)
+### graph.removeBehaviors(behaviors, modes)
 
 移除行为，将单个或多个行为从单个或多个模式中去除。
 

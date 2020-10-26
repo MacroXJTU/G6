@@ -7,7 +7,7 @@ In this part, we will describe the methods about transformation between view por
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*M_xPSqLZYawAAAAAAAAAAABkARQnAQ' width=565 alt='img'/>
 
-### getPointByClient(clientX, clientY)
+### graph.getPointByClient(clientX, clientY)
 
 Transform client/screen coordinates into view port coordinates.
 
@@ -30,7 +30,7 @@ const point = graph.getPointByClient(e.clientX, e.clientY);
 console.log('The x and y of view port are: ', point.x, point.y);
 ```
 
-### getClientByPoint(x, y)
+### graph.getClientByPoint(x, y)
 
 Transform view port coordinates into client/screen coordinates.
 
@@ -53,7 +53,7 @@ const point = graph.getClientByPoint(100, 200);
 console.log('The x and y of client/screen are: ', point.x, point.y);
 ```
 
-### getPointByCanvas(canvasX, canvasY)
+### graph.getPointByCanvas(canvasX, canvasY)
 
 Transform canvas coordinates into view port coordinates.
 
@@ -76,7 +76,7 @@ const point = graph.getPointByCanvas(100, 200);
 console.log('The x and y of view port: ', point.x, point.y);
 ```
 
-### getCanvasByPoint(x, y)
+### graph.getCanvasByPoint(x, y)
 
 Transform view port coordinates into canvas coordinates.
 

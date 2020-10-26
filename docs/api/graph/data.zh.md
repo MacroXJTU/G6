@@ -3,13 +3,9 @@ title: 读取/绑定/存储数据
 order: 1
 ---
 
-<!-- ## graph.data(_data_) 绑定数据 -->
-
 设置图初始化数据。
 
-**参数**
-
-### data
+### graph.data(_data_)
 
 <description> _Object_ **required** </description>
 
@@ -41,7 +37,7 @@ const data = {
 graph.data(data);
 ```
 
-### save()
+### graph.save()
 
 获取图数据。
 
@@ -66,7 +62,7 @@ graph.data(data);
 graph.save();
 ```
 
-### read(data)
+### graph.read(data)
 
 接收数据，并进行渲染，read 方法的功能相当于 data 和 render 方法的结合。
 
@@ -102,7 +98,7 @@ const data = {
 graph.read(data);
 ```
 
-### changeData(data, stack)
+### graph.changeData(data, stack)
 
 更新数据源，根据新的数据重新渲染视图。
 

@@ -5,8 +5,6 @@ order: 8
 
 The events in this chapter can be binded or unbinded to graph by [graph.on](/en/docs/api/Graph/#oneventname-handler) and [graph.off](/en/docs/api/Graph/#offeventname-handler).
 
-The parameters of callbacks for common events, Node events, and Edge events are described in [Behavior API](/en/docs/api/Behavior).
-
 ## Interaction Events
 
 Listen to the interaction events such as `click`, `mousemove` by the following way:
@@ -254,16 +252,16 @@ No parameters.
 
 #### graphstatechange
 
-| Name   | Type   | Description                   |
-| ---- | ---- | -------------------- |
+| Name | Type | Description |
+| --- | --- | --- |
 | states | Object | The items with different states, e.g. `{ hover: [Node, Node], selected: [ Node ] }` |
 
 #### afteractivaterelations
 
-| Name   | Type   | Description                   |
-| ------ | ------ | -------------------- |
+| Name   | Type   | Description                    |
+| ------ | ------ | ------------------------------ |
 | item   | Item   | The manipulated item currently |
-| action | String | The current action name           |
+| action | String | The current action name        |
 
 #### nodeselectchange
 
@@ -276,10 +274,9 @@ No parameters.
 
 `beforecreateedge` has no parameters. The parameters of `aftercreateedge` are:
 
-| Name      | Type    | Description                                                       |
-| ------------- | ------ | ---------------------------------------------------------------- |
-| edge        | Item   | The created edge                                             |
-
+| Name | Type | Description      |
+| ---- | ---- | ---------------- |
+| edge | Item | The created edge |
 
 #### itemcollapsed
 
@@ -305,7 +302,7 @@ No parameters.
 
 #### dragnodeend
 
-| Name   | Type   | Description                                     |
-| ------ | ------ | ----------------------------------------------- |
-| items   | Item[]   | The manipulated items.                           |
+| Name | Type | Description |
+| --- | --- | --- |
+| items | Item[] | The manipulated items. |
 | targetItem | null/Node/Combo | The position where the node is placed after dragging, the default is null, that is, placed on the canvas. |

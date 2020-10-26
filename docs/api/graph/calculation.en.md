@@ -3,7 +3,7 @@ title: Calculation
 order: 10
 ---
 
-### getNodeDegree(node, degreeType)
+### graph.getNodeDegree(node, degreeType)
 
 Get the in-degree, out-degree, degree, or all of the three kinds of degree.
 
@@ -20,7 +20,7 @@ Get the in-degree, out-degree, degree, or all of the three kinds of degree.
 graph.getNodeDegree('node1', 'in');
 ```
 
-### getShortestPathMatrix(cache, directed)
+### graph.getShortestPathMatrix(cache, directed)
 
 Get all-pairs shortest-path matrix of the graph.
 
@@ -37,7 +37,7 @@ Get all-pairs shortest-path matrix of the graph.
 const matrix = graph.getShortestPathMatrix();
 ```
 
-### getAdjMatrix(cache, directed)
+### graph.getAdjMatrix(cache, directed)
 
 Get the adjacency matrix of the graph.
 

@@ -1,6 +1,6 @@
 ---
 title: G6.registerBehavior
-order: 7
+order: 8
 ---
 
 Behavior is the compound interactions in G6. In general, a Behavior includes one or more event listeners and a set of item operations.
@@ -9,16 +9,11 @@ By default, Behavior has three callbacks: `shouldBegin`, `shouldUpdate`, and `sh
 
 This document is going to introduce how to customize a behavior. The infomation about the built-in behaviors can be found in the [Built-in Behaviors](/en/docs/manual/middle/states/defaultBehavior). When the [built-in Behaviors](/en/docs/manual/middle/states/defaultBehavior) cannot satisfy your requirments, custom a type of Behavior by `G6.registerBehavior(behaviorName, behavior)`. See [Behavior API](/en/docs/api/Behavior) for detail.
 
-### Parameters
+```ts
+// highlight-start
+G6.registerBehavior(behaviorName: string, behavior: BehaviorOption)
+// highlight-end
 
-| Name | Type | Required | Description |
-| --- | --- | --- | --- |
-| behaviorName | String | true | The name of custom Behavior. |
-| behavior | Object | true | The configurations of custom Behavior. For more information, please refer to [Behavior API](/en/docs/api/Behavior). |
-
-**Usage**
-
-```javascript
 // Custom a type of Behavior
 G6.registerBehavior('behaviorName', {
   // Bind the event and its callback
@@ -60,7 +55,14 @@ G6.registerBehavior('behaviorName', {
 });
 ```
 
-### getEvents()
+## Parameters
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| behaviorName | String | true | The name of custom Behavior. |
+| behavior | BehaviorOption | true | The configurations of custom Behavior. For more information, please refer to [Behavior API](/en/docs/api/Behavior). |
+
+### BehaviorOption.getEvents()
 
 Define and handle events when user customize a Behavior.
 
@@ -80,7 +82,7 @@ G6.registerBehavior('behaviorName', {
 }
 ```
 
-### onNodeClick(evt)
+### BehaviorOption.onNodeClick(evt)
 
 `onNodeClick`, `onEdgeClick`, and `onMouseMove` are custom events for handling `node:click`, `edge:click`, and `mousemove`.
 
@@ -134,7 +136,7 @@ G6.registerBehavior('behaviorName', {
 });
 ```
 
-### getDefaultCfg()
+### BehaviorOption.getDefaultCfg()
 
 Default configurations while customing a Behavior. The configurations will be mixed by the configurations from user.
 
@@ -152,7 +154,7 @@ G6.registerBehavior('behaviorName', {
 }
 ```
 
-### shouldBegin(evt)
+### BehaviorOption.shouldBegin(evt)
 
 Whether to prevent the behavior. Return `true` by default, which means do not prevent the behavior. User should call it by themselves.
 
@@ -167,7 +169,7 @@ G6.registerBehavior('behaviorName', {
 });
 ```
 
-### shouldUpdate(evt)
+### BehaviorOption.shouldUpdate(evt)
 
 Whether to update the data and the view. Returns `true` by default, which means allow updating.
 
@@ -195,6 +197,6 @@ const graph = new G6.Graph({
 });
 ```
 
-### shouldEnd(evt)
+### BehaviorOption.shouldEnd(evt)
 
 Whether to end the behavior. Returns `true` by default.

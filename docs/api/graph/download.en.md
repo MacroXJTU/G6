@@ -3,7 +3,7 @@ title: Export Image
 order: 10
 ---
 
-### downloadFullImage(name, type, imageConfig)
+### graph.downloadFullImage(name, type, imageConfig)
 
 Export the whole graph as an image, whatever (a part of) the graph is out of the screen.
 
@@ -31,7 +31,7 @@ graph.downloadFullImage('tree-graph', {
 });
 ```
 
-### downloadImage(name, type, backgroundColor)
+### graph.downloadImage(name, type, backgroundColor)
 
 Export the canvas as an image.
 
@@ -49,7 +49,7 @@ Export the canvas as an image.
 graph.downloadImage();
 ```
 
-### toDataURL(type, backgroundColor)
+### graph.toDataURL(type, backgroundColor)
 
 Generate url of the image of the graph inside the view port.
 
@@ -71,7 +71,7 @@ Generate url of the image of the graph inside the view port.
 const dataURL = graph.toDataURL();
 ```
 
-### toFullDataURL(callback, type, backgroundColor)
+### graph.toFullDataURL(callback, type, backgroundColor)
 
 Generate url of the image of the whole graph including the part out of the view port.
 

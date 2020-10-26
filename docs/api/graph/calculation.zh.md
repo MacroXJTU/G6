@@ -1,9 +1,9 @@
 ---
-title: Calculation
+title: 图计算相关
 order: 10
 ---
 
-### getNodeDegree(node, degreeType)
+### graph.getNodeDegree(node, degreeType)
 
 获取节点的出度、入度、总度数，或同时获得以上三种。
 
@@ -20,7 +20,7 @@ order: 10
 graph.getNodeDegree('node1', 'in');
 ```
 
-### getShortestPathMatrix(cache, directed)
+### graph.getShortestPathMatrix(cache, directed)
 
 获取图中两两节点之间的最短路径矩阵。
 
@@ -41,7 +41,7 @@ graph.getNodeDegree('node1', 'in');
 const matrix = graph.getShortestPathMatrix();
 ```
 
-### getAdjMatrix(cache, directed)
+### graph.getAdjMatrix(cache, directed)
 
 获取邻接矩阵。
 

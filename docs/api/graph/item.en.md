@@ -1,9 +1,67 @@
 ---
-title: combo
+title: node/edge/combos
 order: 10
 ---
 
-### combo(comboFn)
+### graph.node(nodeFn)
+
+Set the style and other configurations for each node.
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>⚠️Attention:</strong></span> this funcion must **be called before graph.render()**. It does not take effect otherwise.
+
+**Parameters**
+
+| Name   | Type     | Required | Description                              |
+| ------ | -------- | -------- | ---------------------------------------- |
+| nodeFn | Function | true     | Return the configurations for each node. |
+
+**Usage**
+
+```javascript
+graph.node((node) => {
+  return {
+    id: node.id,
+    type: 'rect',
+    style: {
+      fill: 'blue',
+    },
+  };
+});
+
+graph.data(data);
+graph.render();
+```
+
+### graph.edge(edgeFn)
+
+Set the style and other configurations for each edge.
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>⚠️Attention:</strong></span> this funcion must **be called before graph.render()**. It does not take effect otherwise.
+
+**Parameters**
+
+| Name   | Type     | Required | Description                              |
+| ------ | -------- | -------- | ---------------------------------------- |
+| edgeFn | Function | true     | Return the configurations for each edge. |
+
+**Usage**
+
+```javascript
+graph.edge((edge) => {
+  return {
+    id: edge.id,
+    type: 'cubic-horizontal',
+    style: {
+      stroke: 'green',
+    },
+  };
+});
+
+graph.data(data);
+graph.render();
+```
+
+### graph.combo(comboFn)
 
 Set the style and other configurations for each combo.
 
@@ -32,7 +90,7 @@ graph.data(data);
 graph.render();
 ```
 
-### collapseCombo(combo)
+### graph.collapseCombo(combo)
 
 Collapse a Combo.
 
@@ -48,7 +106,7 @@ Collapse a Combo.
 graph.collapseCombo('combo1')
 ```
 
-### expandCombo(combo)
+### graph.expandCombo(combo)
 
 Expand a Combo.
 
@@ -64,7 +122,7 @@ Expand a Combo.
 graph.expandCombo('combo1')
 ```
 
-### collapseExpandCombo(combo)
+### graph.collapseExpandCombo(combo)
 
 Expand the `combo` if it is collapsed. Collapse the `combo` if it is expanded.
 
@@ -80,7 +138,7 @@ Expand the `combo` if it is collapsed. Collapse the `combo` if it is expanded.
 graph.collapseExpandCombo('combo1')
 ```
 
-### createCombo(combo, elements)
+### graph.createCombo(combo, elements)
 
 Create a new combo with existing nodes or combos to be its children.
 
@@ -106,7 +164,7 @@ graph.createCombo({
 }, ['node1', 'node2', 'combo2'])
 ```
 
-### uncombo(combo)
+### graph.uncombo(combo)
 
 Ungroup the combo, which deletes the combo itself, and appends the children of the combo to its parent(if it exists).
 
@@ -122,7 +180,7 @@ Ungroup the combo, which deletes the combo itself, and appends the children of t
 graph.uncombo('combo1')
 ```
 
-### collapseGroup(groupId)
+### graph.collapseGroup(groupId)
 
 Collapse the group with groupId. After collapsing, the nodes and edges inside the group will be hided, the edges linking inside nodes and outside nodes will be linked to the group.
 
@@ -138,7 +196,7 @@ Collapse the group with groupId. After collapsing, the nodes and edges inside th
 graph.collapseGroup('groupId');
 ```
 
-### expandGroup(groupId)
+### graph.expandGroup(groupId)
 
 Expand the group to show the inside nodes and edges, and the edges linking inside nodes and outside nodes will be restored.
 

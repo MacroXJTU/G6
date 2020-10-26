@@ -3,7 +3,7 @@ title: render/refresh/pain
 order: 10
 ---
 
-### render()
+### graph.render()
 
 Render the graph with data onto the canvas.
 
@@ -13,7 +13,7 @@ Render the graph with data onto the canvas.
 graph.render();
 ```
 
-### renderCustomGroup(data, groupType)
+### graph.renderCustomGroup(data, groupType)
 
 Render a node group according to the data.
 
@@ -63,7 +63,7 @@ const data = {
 graph.renderCustomGroup(data, 'circle');
 ```
 
-### read(data)
+### graph.read(data)
 
 Read the data and render the graph. It is equal to combining graph.data(data) and graph.render().
 
@@ -99,7 +99,7 @@ const data = {
 graph.read(data);
 ```
 
-### changeData(data, stack)
+### graph.changeData(data, stack)
 
 Change the data source, and render the graph according to the new data.
 
@@ -139,7 +139,7 @@ graph.changeData(data);
 graph.changeData();
 ```
 
-### refresh()
+### graph.refresh()
 
 Refresh the canvas when the **existing** data items' configurations is changed in the source data.
 
@@ -151,7 +151,7 @@ Attention: If there are some new nodes/edges/combos to be added or some nodes/ed
 graph.refresh();
 ```
 
-### refreshItem(item)
+### graph.refreshItem(item)
 
 Refresh the item.
 
@@ -169,7 +169,7 @@ const item = graph.findById('node');
 graph.refreshItem(item);
 ```
 
-### refreshPositions()
+### graph.refreshPositions()
 
 When the positions of nodes in their data models are changed, refresh the canvas to paint the nodes with new positions. It will update the edges in the same time.
 
@@ -179,7 +179,7 @@ When the positions of nodes in their data models are changed, refresh the canvas
 graph.refreshPositions();
 ```
 
-### paint()
+### graph.paint()
 
 Repaint the canvas. Use it after changing the item's style or state.
 
@@ -198,7 +198,7 @@ graph.paint();
 graph.setAutoPaint(autoPaint);
 ```
 
-### setAutoPaint(auto)
+### graph.setAutoPaint(auto)
 
 Whether to repaint the canvas automatically after updating or deleting items.
 

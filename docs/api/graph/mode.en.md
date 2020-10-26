@@ -1,8 +1,8 @@
 ---
-title: Mode
+title: Set/Get Mode
 ---
 
-### setMode(mode)
+### graph.setMode(mode)
 
 Switch the interaction mode of graph. For example, switch from edit mode to read-only mode.
 
@@ -28,7 +28,7 @@ const graph = new G6.Graph({
 graph.setMode('custom')
 ```
 
-### getCurrentMode()
+### graph.getCurrentMode()
 
 Get the current mode.
 

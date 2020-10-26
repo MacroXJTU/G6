@@ -1,9 +1,9 @@
 ---
-title: graph.find* 查找相关
+title: 查找相关
 order: 10
 ---
 
-### find(type, fn)
+### graph.find(type, fn)
 
 根据具体规则查找单个元素。
 
@@ -27,7 +27,7 @@ const findNode = graph.find('node', (node) => {
 });
 ```
 
-### findById(id)
+### graph.findById(id)
 
 根据 ID，查询对应的元素实例。
 
@@ -48,7 +48,7 @@ const findNode = graph.find('node', (node) => {
 const node = graph.findById('node');
 ```
 
-### findAll(type, fn)
+### graph.findAll(type, fn)
 
 查询所有满足规则的元素。
 
@@ -72,7 +72,7 @@ const nodes = graph.findAll('node', (node) => {
 });
 ```
 
-### findAllByState(type, state)
+### graph.findAllByState(type, state)
 
 查找所有处于指定状态的元素。
 

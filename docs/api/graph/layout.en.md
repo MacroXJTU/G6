@@ -5,7 +5,7 @@ order: 10
 
 There are several basic layout algorithms in G6 3.1. For more information, please refer to [Layout API](/en/docs/api/layout/Layout)。
 
-### layout()
+### graph.layout()
 
 Re-layout the graph with current layout configurations in graph.
 
@@ -56,7 +56,7 @@ graph.on('node:dragend', (e) => {
 });
 ```
 
-### updateLayout(cfg)
+### graph.updateLayout(cfg)
 
 Update the layout configurations.
 

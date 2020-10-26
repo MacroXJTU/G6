@@ -1,31 +1,22 @@
 ---
-title: registerBehavior
-order: 7
+title: G6.registerBehavior
+order: 8
 ---
 
 Behavior 指 G6 中的复合交互，一般 Behavior 包含一个或多个事件的监听与处理以及一系列对图中元素的操作。
 
 Behavior 默认包含 `shouldBegin`，`shouldUpdate`，`shouldEnd` 三个回调，代表是否开始行为，是否更新元素，是否进行结束行为，当返回值为 `false` 时阻止默认行为。
 
-本文将介绍如何自定义 Behavior。所有内置 Behavior 及其参数参见 [内置的 Behavior 教程](/zh/docs/manual/middle/states/defaultBehavior)。
+所有内置 Behavior 及其参数参见 [内置的 Behavior 教程](/zh/docs/manual/middle/states/defaultBehavior)。当 [内置 Behavior](/zh/docs/manual/middle/states/defaultBehavior) 不能满足需求时，使用 `registerBehavior(behaviorName, behavior)` 方法注册自定义的交互行为。详见 [Behavior API](/zh/docs/api/Behavior)。本文将介绍如何自定义 Behavior。
 
-## G6.registerBehavior(behaviorName, behavior)
+```ts
+// highlight-start
+G6.registerBehavior(behaviorName: string, behavior: BehaviorOption)
+// highlight-end
 
-当 [内置 Behavior](/zh/docs/manual/middle/states/defaultBehavior) 不能满足需求时，使用 `registerBehavior(behaviorName, behavior)` 方法注册自定义的交互行为。详见 [Behavior API](/zh/docs/api/Behavior)。
-
-### 参数
-
-| 名称 | 类型 | 是否必选 | 描述 |
-| --- | --- | --- | --- |
-| behaviorName | String | true | 自定义 Behavior 的名称。 |
-| behavior | Object | true | 自定义 behavior 时的配置项，配置项中包括的方法及作用具体请参考：[Behavior API](/zh/docs/api/Behavior)。 |
-
-### 用法
-
-```javascript
-// 注册自定义 Behavior
+// Custom a type of Behavior
 G6.registerBehavior('behaviorName', {
-  // 设置事件及处理事件的回调之间的对应关系
+  // Bind the event and its callback
   getEvents() {
     return {
       'node:click': 'onClick',
@@ -34,9 +25,9 @@ G6.registerBehavior('behaviorName', {
     };
   },
   /**
-   * 处理 node:click 事件的回调
+   * Handle the callback for node:click
    * @override
-   * @param  {Object} evt 事件句柄
+   * @param  {Object} evt The handler
    */
   onClick(evt) {
     const node = evt.item;
@@ -46,17 +37,17 @@ G6.registerBehavior('behaviorName', {
     // TODO
   },
   /**
-   * 处理 mousemove 事件的回调
+   * Handle the callback for mousemove
    * @override
-   * @param  {Object} evt 事件句柄
+   * @param  {Object} evt The handler
    */
   onMousemove(evt) {
     // TODO
   },
   /**
-   * 处理 :click 事件的回调
+   * Handle the callback for :click
    * @override
-   * @param  {Object} evt 事件句柄
+   * @param  {Object} evt The handler
    */
   onEdgeClick(evt) {
     // TODO
@@ -64,7 +55,14 @@ G6.registerBehavior('behaviorName', {
 });
 ```
 
-## getEvents()
+## 参数
+
+| 名称 | 类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- |
+| behaviorName | String | true | 自定义 Behavior 的名称。 |
+| behavior | BehaviorOption | true | 自定义 behavior 时的配置项，配置项中包括的方法及作用具体请参考：[Behavior API](/zh/docs/api/Behavior)。 |
+
+### BehaviorOption.getEvents()
 
 自定义 Behavior 时，定义事件及处理事件的方法。
 
@@ -84,7 +82,7 @@ G6.registerBehavior('behaviorName', {
 }
 ```
 
-## onNodeClick(evt)
+### BehaviorOption.onNodeClick(evt)
 
 `onNodeClick`、`onEdgeClick` 和 `onMouseMove` 都属于自定义方法，用于处理 `node:click`、`edge:click`、`mousemove` 事件。
 
@@ -138,7 +136,7 @@ G6.registerBehavior('behaviorName', {
 });
 ```
 
-## getDefaultCfg()
+### BehaviorOption.getDefaultCfg()
 
 定义自定义 Behavior 时的默认参数，会与用户传入的参数进行合并。
 
@@ -156,7 +154,7 @@ G6.registerBehavior('behaviorName', {
 }
 ```
 
-## shouldBegin(evt)
+### BehaviorOption.shouldBegin(evt)
 
 是否阻止行为发生，默认返回 `true`，不阻止行为，需要在处理逻辑中自行调用。
 
@@ -171,7 +169,7 @@ G6.registerBehavior('behaviorName', {
 }
 ```
 
-## shouldUpdate(evt)
+### BehaviorOption.shouldUpdate(evt)
 
 是否更新数据及更改视图，默认返回 `true`，允许更新，如果返回 `false`，则不更新数据和视图。
 
@@ -199,6 +197,6 @@ const graph = new G6.Graph({
 });
 ```
 
-## shouldEnd(evt)
+### BehaviorOption.shouldEnd(evt)
 
 是否结束行为，默认返回 `true`。

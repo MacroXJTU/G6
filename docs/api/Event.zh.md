@@ -1,23 +1,21 @@
 ---
-title: Event
+title: 事件
 order: 8
 ---
 
 本章介绍的事件可以通过 [graph.on](/zh/docs/api/Graph/#oneventname-handler) 与 [graph.off](/zh/docs/api/Graph/#offeventname-handler) 进行绑定/解绑监听函数。
 
-通用事件、Node 事件、Edge 事件及 Canvas 事件回调的参数请参考 [Behavior API](/zh/docs/api/Behavior)。
-
 ## 交互事件
 
 使用如下形式进行交互事件的监听：
 
-```
-graph.on(eventName, evt => {
+```javascript
+graph.on(eventName, (evt) => {
   // 一些操作
-})
+});
 ```
 
-其中，事件对象 `evt` 的属性值有：
+其中，回调参数事件对象 `evt` 的属性值有：
 
 - `type`: 事件类型
 - `name`: 事件名称
@@ -109,7 +107,6 @@ graph.on(eventName, evt => {
 | edge:drop | 被拖拽的元素在目标边元素上同时鼠标放开触发的事件，此事件作用在目标边元素上 |
 | edge:contextmenu | 用户在边上右击鼠标时触发并打开右键菜单，见 [Demo](/zh/examples/tool/contextMenu) |
 
-
 ### Combo 交互事件
 
 Combo 继承所有 Node 事件。
@@ -134,8 +131,6 @@ Combo 继承所有 Node 事件。
 | canvas:dragenter | 当拖曳画布进入目标元素的时候触发的事件，此事件作用在目标画布上 |
 | canvas:dragleave | 当拖曳画布离开目标元素的时候触发的事件，此事件作用在目标画布上 |
 | canvas:drop | 被拖拽的元素在空白画布上同时鼠标放开触发的事件，此事件作用在目标画布上 |
-
-
 
 ## 时机事件
 
@@ -250,8 +245,8 @@ graph.on(timingEventName, evt => {
 
 #### graphstatechange
 
-| 名称 | 类型 | 描述                 |
-| ---- | ---- | -------------------- |
+| 名称   | 类型   | 描述                                                                         |
+| ------ | ------ | ---------------------------------------------------------------------------- |
 | states | Object | 当前各个状态下的元素，格式举例 `{ hover: [Node, Node], selected: [ Node ] }` |
 
 #### afteractivaterelations
@@ -272,9 +267,9 @@ graph.on(timingEventName, evt => {
 
 `beforecreateedge` 无参数。`aftercreateedge` 参数如下：
 
-| 名称          | 类型   | 描述                                                             |
-| ------------- | ------ | ---------------------------------------------------------------- |
-| edge        | Item   | 当前被创建的边实例                                             |
+| 名称 | 类型 | 描述               |
+| ---- | ---- | ------------------ |
+| edge | Item | 当前被创建的边实例 |
 
 #### itemcollapsed
 
@@ -300,7 +295,7 @@ graph.on(timingEventName, evt => {
 
 #### dragnodeend
 
-| 名称   | 类型   | 描述                                          |
-| ------ | ------ | --------------------------------------------- |
-| items   | Item[]   | 当前操作的 item 实例                          |
-| targetItem | null/Node/Combo | 拖动节点结束后，节点是放到canvas、Node 还是 Combo 上面 |
+| 名称       | 类型            | 描述                                                    |
+| ---------- | --------------- | ------------------------------------------------------- |
+| items      | Item[]          | 当前操作的 item 实例                                    |
+| targetItem | null/Node/Combo | 拖动节点结束后，节点是放到 canvas、Node 还是 Combo 上面 |

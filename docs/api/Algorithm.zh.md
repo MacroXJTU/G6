@@ -1,6 +1,6 @@
 ---
 title: 图算法
-order: 6
+order: 9
 ---
 
 图算法提供了一种最有效的分析关联数据的方法，它们描述了如何处理图以发现一些定性或者定量的结论。图算法基于图论，利用节点之间的关系来推断复杂系统的结构和变化。我们可以使用这些算法来发现隐藏的信息，验证业务假设，并对行为进行预测。
@@ -333,31 +333,31 @@ result = detectDirectedCycle(graph)
 
 **参数**
 
-| 名称  | 类型   | 是否必选 | 描述          |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph 实例 |
-| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜
-| nodeIds |  string[] | false | 需包含或排除的节点 ID 的数组，若不指定，则返回图中所有的圈 ｜
-| include | boolean | false | 若为 `true`, 则返回包含参数 `nodeIds` 中指定的节点的圈，否则，返回所有不包含 `nodeIds` 中指定的节点的圈。默认为 `true` ｜
+| 名称 | 类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph 实例 |
+| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜ |
+| nodeIds | string[] | false | 需包含或排除的节点 ID 的数组，若不指定，则返回图中所有的圈 ｜ |
+| include | boolean | false | 若为 `true`, 则返回包含参数 `nodeIds` 中指定的节点的圈，否则，返回所有不包含 `nodeIds` 中指定的节点的圈。默认为 `true` ｜ |
 
 **返回值**
 
 - 返回值类型：[{[key: string]: Node}]
-- 返回一个数组表示检测到的所有符合条件的圈，每个环用一个Object表示，其中key为节点id，value为该节点在环中指向的下一个节点。
+- 返回一个数组表示检测到的所有符合条件的圈，每个环用一个 Object 表示，其中 key 为节点 id，value 为该节点在环中指向的下一个节点。
 
 **用法**
 
 ```javascript
-const { detectAllCycles } = Algorithm
+const { detectAllCycles } = Algorithm;
 
 // 检测有向图中的所有简单环
-const allCycles = detectAllCycles(graph, true)   
+const allCycles = detectAllCycles(graph, true);
 
 // 检测有向图中包含节点 B 的所有简单环
-const allCycleIncludeB = detectAllCycles(graph, true, ['B'])
-    
+const allCycleIncludeB = detectAllCycles(graph, true, ['B']);
+
 // 检测无向图中所有不包含节点 B 的所有基本环
-const allCycleExcludeB = detectAllCycles(graph, false, ['B'], false)
+const allCycleExcludeB = detectAllCycles(graph, false, ['B'], false);
 ```
 
 ### findShortestPath(graph, start, end, directed, weightPropertyName)
@@ -366,23 +366,25 @@ const allCycleExcludeB = detectAllCycles(graph, false, ['B'], false)
 
 **参数**
 
-| 名称  | 类型   | 是否必选 | 描述          |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph 实例 |
-| start | INode / string | true | G6 Node 实例或 ID，路径起始点 ｜
-| end | INode / string | true | G6 Node 实例或 ID，路径终点 ｜
-| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜
-| weightPropertyName | string | false | 边的权重属性字段名，若不指定，则认为所有边权重相同 ｜
+| 名称 | 类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph 实例 |
+| start | INode / string | true | G6 Node 实例或 ID，路径起始点 ｜ |
+| end | INode / string | true | G6 Node 实例或 ID，路径终点 ｜ |
+| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜ |
+| weightPropertyName | string | false | 边的权重属性字段名，若不指定，则认为所有边权重相同 ｜ |
 
 **返回值**
 
 - 返回值类型：Object，
+
 ```
  {
   length: number,
   path: string[]
 }
 ```
+
 - 返回的对象中，length 属性代表最短路径的长度，path 属性为构成一条最短路径的节点数组。
 
 **用法**
@@ -392,35 +394,35 @@ const data = {
   nodes: [
     {
       id: 'A',
-      label: 'A'
+      label: 'A',
     },
     {
       id: 'B',
-      label: 'B'
+      label: 'B',
     },
     {
       id: 'C',
-      label: 'C'
+      label: 'C',
     },
     {
       id: 'D',
-      label: 'D'
+      label: 'D',
     },
     {
       id: 'E',
-      label: 'E'
+      label: 'E',
     },
     {
       id: 'F',
-      label: 'F'
+      label: 'F',
     },
     {
       id: 'G',
-      label: 'G'
+      label: 'G',
     },
     {
       id: 'H',
-      label: 'H'
+      label: 'H',
     },
   ],
   edges: [
@@ -456,21 +458,21 @@ const data = {
       source: 'D',
       target: 'E',
     },
-  ]
-}
+  ],
+};
 
 const graph = new G6.Graph({
-    container: 'container',
-    width: 500,
-    height: 500
-  })
-graph.data(data)
-graph.render()
+  container: 'container',
+  width: 500,
+  height: 500,
+});
+graph.data(data);
+graph.render();
 
 const { findShortestPath } = Algorithm;
 // 不考虑边的方向性，查找节点 A 和 节点 C 之间的最短路径
-const { length, path } = findShortestPath(graph, 'A', 'C')
-console.log(length, path)
+const { length, path } = findShortestPath(graph, 'A', 'C');
+console.log(length, path);
 // 期望输出：2, ['A', 'B', 'C']
 ```
 
@@ -480,12 +482,12 @@ console.log(length, path)
 
 **参数**
 
-| 名称  | 类型   | 是否必选 | 描述          |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph 实例 |
-| start | INode / string | true | G6 Node 实例或 ID，路径起始点 ｜
-| end | INode / string | true | G6 Node 实例或 ID，路径终点 ｜
-| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜
+| 名称     | 类型           | 是否必选 | 描述                                                      |
+| -------- | -------------- | -------- | --------------------------------------------------------- |
+| graph    | IGraph         | true     | G6 Graph 实例                                             |
+| start    | INode / string | true     | G6 Node 实例或 ID，路径起始点 ｜                          |
+| end      | INode / string | true     | G6 Node 实例或 ID，路径终点 ｜                            |
+| directed | boolean        | false    | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜ |
 
 **返回值**
 
@@ -499,35 +501,35 @@ const data = {
   nodes: [
     {
       id: 'A',
-      label: 'A'
+      label: 'A',
     },
     {
       id: 'B',
-      label: 'B'
+      label: 'B',
     },
     {
       id: 'C',
-      label: 'C'
+      label: 'C',
     },
     {
       id: 'D',
-      label: 'D'
+      label: 'D',
     },
     {
       id: 'E',
-      label: 'E'
+      label: 'E',
     },
     {
       id: 'F',
-      label: 'F'
+      label: 'F',
     },
     {
       id: 'G',
-      label: 'G'
+      label: 'G',
     },
     {
       id: 'H',
-      label: 'H'
+      label: 'H',
     },
   ],
   edges: [
@@ -563,37 +565,37 @@ const data = {
       source: 'D',
       target: 'E',
     },
-  ]
-}
+  ],
+};
 
 const graph = new G6.Graph({
-    container: 'container',
-    width: 500,
-    height: 500
-  })
-graph.data(data)
-graph.render()
+  container: 'container',
+  width: 500,
+  height: 500,
+});
+graph.data(data);
+graph.render();
 
 const { findAllPath } = Algorithm;
-const allPaths = findAllPath(graph, 'A', 'E')
-console.log(allPaths)
+const allPaths = findAllPath(graph, 'A', 'E');
+console.log(allPaths);
 // 期望输出值：[['A', 'D', 'F', 'E'], ['A', 'D', 'E'], ['A', 'E']]
 ```
-
 
 ### getConnectedComponents
 
 返回图中的连通分量。若为无向图，连通分量指图中的极大连通子图，连通子图中任何两个顶点之间通过路径相互连接；若为有向图，则返回所有强连通分量，强连通分量指有向图中的极大强连通子图，强连通子图中任何两个节点之间都存在一条可达到彼此的有向路径。
 
 参考资料：
+
 - 检测有向图中的强连通分量：[Tarjan's Algorithm](http://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)
 
- **参数**
+  **参数**
 
-| 名称  | 类型   | 是否必选 | 描述          |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph 实例 |
-| directed | boolean | false | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜
+| 名称     | 类型    | 是否必选 | 描述                                                      |
+| -------- | ------- | -------- | --------------------------------------------------------- |
+| graph    | IGraph  | true     | G6 Graph 实例                                             |
+| directed | boolean | false    | 是否考虑边的方向性，若不指定，则取图的 `directed` 属性 ｜ |
 
 **返回值**
 
@@ -679,16 +681,16 @@ graph.render();
 
 // 图中的连通分量
 const components = getConnectedComponents(graph, false);
-components.forEach((component => {
-  console.log(component.map(node => node.get('id')))
-}))
+components.forEach((component) => {
+  console.log(component.map((node) => node.get('id')));
+});
 // 期望输出结果：['A', 'B', 'C', 'D', 'E', 'F'], ['G', 'H']
 
 // 有向图中的强连通分量
 const components2 = getConnectedComponents(graph, true);
-components2.forEach((component => {
-  console.log(component.map(node => node.get('id')))
-}))
+components2.forEach((component) => {
+  console.log(component.map((node) => node.get('id')));
+});
 // 期望输出结果：['A'], ['B'], ['C'], ['D', 'E', 'F'], ['G', 'H']
 ```
 
@@ -697,18 +699,18 @@ components2.forEach((component => {
 PageRank 可以用来度量网络中节点的重要性，最初用于标识网页的重要性，对网页进行排序。PageRank 算法假设当前节点的重要性是由指向它的其他节点的重要性决定的，一个节点接收到的来自其他节点的入链 (inbound) 越多，则越重要，每个入链的权重由提供入链的节点的重要性决定。 因此 PageRank 除了考虑到入链数量，还参考了入链“质量”。PageRank 通过迭代递归计算来更新每个节点的得分，直到得分稳定为止。
 
 参考资料：
+
 - [PageRank](https://en.wikipedia.org/wiki/PageRank)
 
- **参数**
+  **参数**
 
-| 名称  | 类型   | 是否必选 | 描述          |
-| ----- | ------ | -------- | ------------- |
-| graph | IGraph | true     | G6 Graph 实例 |
-| epsilon | number | false | 判断 PageRank 得分是否稳定的精度值，默认 0.000001 ｜
-| linkProb | number | false | 阻尼系数（dumping factor），指任意时刻，用户访问到某节点后继续访问该节点指向的节点的概率，默认 0.85。 ｜
+| 名称 | 类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- |
+| graph | IGraph | true | G6 Graph 实例 |
+| epsilon | number | false | 判断 PageRank 得分是否稳定的精度值，默认 0.000001 ｜ |
+| linkProb | number | false | 阻尼系数（dumping factor），指任意时刻，用户访问到某节点后继续访问该节点指向的节点的概率，默认 0.85。 ｜ |
 
 **返回值**
 
 - 返回值类型：Object, {[key: string]: number}
 - 返回一个对象，表示节点 ID 对应的该节点的 PageRank 值。
-

@@ -7,7 +7,7 @@ order: 10
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*loahSq940hMAAAAAAAAAAABkARQnAQ' width=565 alt='img'/>
 
-### getPointByClient(clientX, clientY)
+### graph.getPointByClient(clientX, clientY)
 
 将屏幕/页面坐标转换为视口坐标。
 
@@ -30,7 +30,7 @@ const point = graph.getPointByClient(e.clientX, e.clientY);
 console.log('视口 x/y 坐标分别为:', point.x, point.y);
 ```
 
-### getClientByPoint(x, y)
+### graph.getClientByPoint(x, y)
 
 将视口坐标转换为屏幕/页面坐标。
 
@@ -53,7 +53,7 @@ const point = graph.getClientByPoint(100, 200);
 console.log('屏幕/页面x/y坐标分别为:', point.x, point.y);
 ```
 
-### getPointByCanvas(canvasX, canvasY)
+### graph.getPointByCanvas(canvasX, canvasY)
 
 将 Canvas 画布坐标转换为视口坐标。
 
@@ -76,7 +76,7 @@ const point = graph.getPointByCanvas(100, 200);
 console.log('视口x/y坐标分别为:', point.x, point.y);
 ```
 
-### getCanvasByPoint(x, y)
+### graph.getCanvasByPoint(x, y)
 
 将视口坐标转换为 Canvas 画布坐标。
 

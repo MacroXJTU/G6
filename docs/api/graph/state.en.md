@@ -1,9 +1,9 @@
 ---
-title: graph.set[clear]Item(item, stack)
+title: set[clear]ItemState(item, stack)
 order: 10
 ---
 
-### setItemState(item, state, enabled)
+### graph.setItemState(item, state, enabled)
 
 Set the item's state.
 
@@ -30,7 +30,7 @@ graph.setItemState('node1', 'body', 'health');
 graph.setItemState('node2', 'body', 'ill');
 ```
 
-### clearItemStates(item, states)
+### graph.clearItemStates(item, states)
 
 Clear the states of the item. This function could clear multiple states in the same time.
 

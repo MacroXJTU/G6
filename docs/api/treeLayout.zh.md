@@ -1,7 +1,17 @@
 ---
-title: TreeGraph Layout
+title: TreeGraph Layout 配置项
 order: 2
 ---
+
+## 通用配置项
+
+| 名称 | 类型 | 默认值 | 描述 |
+| --- | --- | --- | --- |
+| type | String | dendrogram | 布局类型，支持 dendrogram、compactBox、mindmap 和 indeted。 |
+| direction | String | LR | 布局方向，有  `LR` , `RL` , `TB` , `BT` , `H` , `V`  可选。<br />L：左；R：右；T：上；B：下；H：垂直；V：水平。 |
+| getChildren | Function |  | 返回当前节点的所有子节点 |
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>⚠️ 注意:</strong></span> 当 `type='indeted'` 时，`direction` 只能取 `'LR'`、`'RL'` 和 `'H'` 这三个值。
 
 ## CompactBox 紧凑树布局
 
@@ -9,9 +19,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*z-ESRoHTpvIAAAAAAAAAAABkARQnAQ' width=650 alt='img'/>
 
-### 属性
-
-#### direction
+### layoutCfg.direction
 
 **类型**：String<br />**可选值**：'LR' | 'RL' | 'TB' | 'BT' | 'H' | 'V'<br />**默认值**：'LR'<br />**是否必须**：false<br />**说明**：树布局的方向，其他选项说明
 
@@ -39,7 +47,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*E0c8TIYRPYoAAAAAAAAAAABkARQnAQ' width=100 alt='img'/>
 
-#### getId
+### layoutCfg.getId
 
 **类型**: Function<br />**示例**:
 
@@ -52,7 +60,7 @@ order: 2
 
 **是否必须**: false<br />**说明**: 节点 id 的回调函数
 
-#### getWidth
+### layoutCfg.getWidth
 
 **类型**：Number | Function<br />**示例**：
 
@@ -66,7 +74,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的宽度
 
-#### getHeight
+### layoutCfg.getHeight
 
 **类型**：Number | Function<br />**示例**：
 
@@ -80,7 +88,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的高度
 
-#### getHGap
+### layoutCfg.getHGap
 
 **类型**：Number | Function<br />**示例**：
 
@@ -94,7 +102,7 @@ order: 2
 
 **默认值**：18<br />**是否必须**：false<br />**说明**：每个节点的水平间隙
 
-#### getVGap
+### layoutCfg.getVGap
 
 **类型**：Number | Function<br />**示例**：
 
@@ -108,7 +116,7 @@ order: 2
 
 **默认值**：18<br />**是否必须**：false<br />**说明**：每个节点的垂直间隙
 
-#### radial
+### layoutCfg.radial
 
 **类型**：Boolean<br />**默认值**：false<br />**是否必须**：false<br />**说明**：是否按照辐射状布局。若 `radial` 为 `true`，建议 `direction` 设置为 `'LR'` 或 `'RL'`：
 
@@ -120,9 +128,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*zX7tSLqBvwcAAAAAAAAAAABkARQnAQ' width=400 alt='img'/>
 
-### 属性
-
-#### direction
+### layoutCfg.direction
 
 **类型**：String<br />**可选值**：'LR' | 'RL' | 'TB' | 'BT' | 'H' | 'V'<br />**默认值**：'LR'<br />**是否必须**：false<br />**说明**：树布局的方向，默认为 `'LR'`，其他选项说明
 
@@ -150,15 +156,15 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*B9sjToOzCiAAAAAAAAAAAABkARQnAQ' width=115 alt='img'/>
 
-#### nodeSep
+### layoutCfg.nodeSep
 
 **类型**：Number<br />**默认值**：0<br />**是否必须**：false<br />**说明**：节点间距
 
-#### rankSep
+### layoutCfg.rankSep
 
 **类型**：Number<br />**默认值**：0<br />**是否必须**：false<br />**说明**：层与层之间的间距
 
-#### radial
+### layoutCfg.radial
 
 **类型**：Boolean<br />**默认值**：false<br />**是否必须**：false<br />**说明**：是否按照辐射状布局。若 `radial` 为 `true`，建议 `direction` 设置为 `'LR'` 或 `'RL'`：
 
@@ -170,9 +176,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*NBUzRonaOYMAAAAAAAAAAABkARQnAQ' width=175 alt='img'/>
 
-### 属性
-
-#### direction
+### layoutCfg.direction
 
 **类型**：String<br />**可选值**：'LR' | 'RL' | 'H'<br />**默认值**：'LR'<br />**是否必须**：false<br />**说明**：树布局的方向，默认为 `'LR'`，其他选项说明：
 
@@ -186,11 +190,11 @@ order: 2
 
 > （左）LR。（中）RL。（右）H。
 
-#### indent
+### layoutCfg.indent
 
 **类型**：Number<br />**默认值**：20<br />**是否必须**：false<br />**说明**：列间间距
 
-#### getWidth
+### layoutCfg.getWidth
 
 **类型**：Number | Function<br />**示例**：
 
@@ -204,7 +208,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的宽度，`direction` 为 `'H'` 时有效
 
-#### getHeight
+### layoutCfg.getHeight
 
 **类型**：Number | Function<br />**示例**：
 
@@ -218,7 +222,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的高度
 
-#### getSide
+### layoutCfg.getSide
 
 **类型**：Function<br />**示例**：
 
@@ -230,7 +234,7 @@ order: 2
 };
 ```
 
-#### dropCap
+### layoutCfg.dropCap
 
 **类型**：Boolean
 
@@ -248,9 +252,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*J1l5RofvbP0AAAAAAAAAAABkARQnAQ' width=350 alt='img'/>
 
-### 属性
-
-#### direction
+### layoutCfg.direction
 
 **类型**：String<br />**可选值**：'H' | 'V'<br />**默认值**：'H'<br />**是否必须**：false<br />**说明**：树布局的方向，默认为 `'H'`，其他选项说明
 
@@ -262,7 +264,7 @@ order: 2
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*AD0GTaNT5cQAAAAAAAAAAABkARQnAQ' width=150 alt='img'/>
 
-#### getWidth
+### layoutCfg.getWidth
 
 **类型**：Number | Function<br />**示例**：
 
@@ -276,7 +278,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的宽度
 
-#### getHeight
+### layoutCfg.getHeight
 
 **类型**：Number | Function<br />**示例**：
 
@@ -290,7 +292,7 @@ order: 2
 
 **是否必须**：false<br />**说明**：每个节点的高度
 
-#### getHGap
+### layoutCfg.getHGap
 
 **类型**：Number | Function<br />**示例**：
 
@@ -304,7 +306,7 @@ order: 2
 
 **默认值**：18<br />**是否必须**：false<br />**说明**：每个节点的水平间隙
 
-#### getVGap
+### layoutCfg.getVGap
 
 **类型**：Number | Function<br />**示例**：
 
@@ -318,7 +320,7 @@ order: 2
 
 **默认值**：18<br />**是否必须**：false<br />**说明**：每个节点的垂直间隙
 
-#### getSide
+### layoutCfg.getSide
 
 **类型**：Function<br />**示例**：
 

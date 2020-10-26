@@ -1,9 +1,9 @@
 ---
-title: graph.update* 更新元素数据/配置
+title: 更新元素数据或配置
 order: 10
 ---
 
-### updateItem(item, model, stack)
+### graph.updateItem(item, model, stack)
 
 更新元素，包括更新数据、样式等。若图上有 combo，使用该函数更新一个节点位置后，需要调用 [updateCombo(combo)](/zh/docs/api/Graph#updatecombocombo) 以更新相关 combo 的位置。
 
@@ -34,11 +34,11 @@ const item = graph.findById('node');
 graph.updateItem(item, model);
 ```
 
-### update(item, model, stack)
+### graph.update(item, model, stack)
 
 同 updateItem(item, model, stack)。
 
-### updateCombos()
+### graph.updateCombos()
 
 根据子元素（子节点与子 combo）的 bbox 更新所有 combos 的绘制，包括 combos 的位置和范围。
 
@@ -49,7 +49,7 @@ graph.updateItem(item, model);
 graph.updateCombos();
 ```
 
-### updateCombo(combo)
+### graph.updateCombo(combo)
 
 仅更新 combo 及其所有祖先 combo。建议在使用 graph.updateItem 来更新节点位置时，调用该方法以更新节点的祖先 combos。
 
@@ -74,7 +74,7 @@ const comboId = node1.getModel().comboId;
 graph.updateCombo(comboId);
 ```
 
-### updateComboTree(item, parentId)
+### graph.updateComboTree(item, parentId)
 
 更新 Combo 结构，例如移动子树等。
 

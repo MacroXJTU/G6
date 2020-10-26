@@ -1,7 +1,17 @@
 ---
-title: TreeGraph Layout
+title: TreeGraph Layout Configurations
 order: 2
 ---
+
+## Common Configurations
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| type | String | dendrogram | The type of layout. Options: `'dendrogram'`, `'compactBox'`, `'mindmap'`, and `'indeted'`. |
+| direction | String | LR | The direction of layout. Options: `'LR'` , `'RL'` , `'TB'` , `'BT'` , `'H'` , and `'V'`.<br />L: Left; R: right; T: top; B: bottom; H: horizontal; V: vertical. |
+| getChildren | Function |  | Return all the children nodes of the current node. |
+
+<span style="background-color: rgb(251, 233, 231); color: rgb(139, 53, 56)"><strong>⚠️Attention:</strong></span> When`type='indeted'`, `direction` can only be `'LR'`, `'RL'`, and `'H'`.
 
 ## CompactBox
 
@@ -9,9 +19,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*z-ESRoHTpvIAAAAAAAAAAABkARQnAQ' width=650 alt='img'/>
 
-### Configuration
-
-#### direction
+### layoutCfg.direction
 
 **Type**: String<br />**Options**: 'LR' | 'RL' | 'TB' | 'BT' | 'H' | 'V'<br />**Default**: 'LR'<br />**Required**: false<br />**Description**: The direction of layout.
 
@@ -39,7 +47,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*ZFCiTLwCoAYAAAAAAAAAAABkARQnAQ' width=102 alt='img'/>
 
-#### getId
+### layoutCfg.getId
 
 **Type**: Function<br />**Example**:
 
@@ -52,7 +60,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 **Required**: false<br />**Description**: Sets the id for each node
 
-#### getWidth
+### layoutCfg.getWidth
 
 **Type**: Number | Function<br />**Example**:
 
@@ -66,7 +74,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 **Required**: false<br />**Description**: The width of each node
 
-#### getHeight
+### layoutCfg.getHeight
 
 **Type**: Number | Function<br />**Example**:
 
@@ -80,7 +88,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 **Required**: false<br />**Description**: The height of each node
 
-#### getHGap
+### layoutCfg.getHGap
 
 **Type**: Number | Function<br />**Example**:
 
@@ -94,7 +102,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 **Default**: 18<br />**Required**: false<br />**Description**: The horizontal separation of nodes
 
-#### getVGap
+### layoutCfg.getVGap
 
 **Type**: Number | Function<br />**Example**:
 
@@ -108,7 +116,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 **Default**: 18<br />**Required**: false<br />**Description**: The vertical separation of nodes
 
-#### radial
+### layoutCfg.radial
 
 **Type**: Boolean<br />**Default**: false<br />**Required**: false<br />**Description**: If layout the graph in radial style. If `radial` is `true`, we recommend to set `direction` to `'LR'` or `'RL'`:<br />
 
@@ -120,9 +128,7 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*zX7tSLqBvwcAAAAAAAAAAABkARQnAQ' width=400 alt='img'/>
 
-### Configuration
-
-#### direction
+### layoutCfg.direction
 
 **Type**: String<br />**Options**: 'LR' | 'RL' | 'TB' | 'BT' | 'H' | 'V'<br />**Default**: 'LR'<br />**Required**: false<br />**Description**: The direction of layout.
 
@@ -150,15 +156,15 @@ CompactBox is the default layout for TreeGraph. It will consider the bounding bo
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*ZFCiTLwCoAYAAAAAAAAAAABkARQnAQ' width=116 alt='img'/>
 
-#### nodeSep
+### layoutCfg.nodeSep
 
 **Type**: Number<br />**Default**: 0<br />**Required**: false<br />**Description**: Node separation
 
-#### rankSep
+### layoutCfg.rankSep
 
 **Type**: Number<br />**Default**: 0<br />**Required**: false<br />**Description**: Level separation
 
-#### radial
+### layoutCfg.radial
 
 **Type**: Boolean<br />**Default**: false<br />**Required**: false<br />**Description**: Wheter layout the graph in radial style. If `radial` is `true`, we recommend to set `direction` to `'LR'` or `'RL'`:<br /><img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*MqFcTLAhXIsAAAAAAAAAAABkARQnAQ' width=171 alt='img'/>
 
@@ -168,9 +174,7 @@ Indented layout represents the hierarchy by indent between them. Each node will 
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*NBUzRonaOYMAAAAAAAAAAABkARQnAQ' width=175 alt='img'/>
 
-### Configuration
-
-#### direction
+### layoutCfg.direction
 
 **Type**: String<br />**Options**: 'LR' | 'RL' | 'H'<br />**Default**: 'LR'<br />**Required**: false<br />**Description**: The direction of layout:
 
@@ -184,11 +188,11 @@ Indented layout represents the hierarchy by indent between them. Each node will 
 
 > (Left)LR. (Center)RL. (Right)H.
 
-#### indent
+### layoutCfg.indent
 
 **Type**: Number<br />**Default**: 20<br />**Required**: false<br />**Description**: Colunm separation
 
-#### getWidth
+### layoutCfg.getWidth
 
 **Type**: Number | Function<br />**Example**:
 
@@ -202,7 +206,7 @@ Indented layout represents the hierarchy by indent between them. Each node will 
 
 **Required**: false<br />**Description**: The width of each node. Takes effect only when `direction` is `'H'`
 
-#### getHeight
+### layoutCfg.getHeight
 
 **Type**: Number | Function<br />**Example**:
 
@@ -216,7 +220,7 @@ Indented layout represents the hierarchy by indent between them. Each node will 
 
 **Required**: false<br />**Description**: The height of each node
 
-#### getSide
+### layoutCfg.getSide
 
 **Type**: Function<br />**Example**:
 
@@ -230,7 +234,7 @@ Indented layout represents the hierarchy by indent between them. Each node will 
 
 **Required**: false<br />**Description**: The callback function of node position(left or right of root node). Only affects the nodes which are connected to the root node directly. And the descendant nodes will be placed according to it.
 
-#### dropCap
+### layoutCfg.dropCap
 
 **Type**: Boolean
 
@@ -244,9 +248,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*J1l5RofvbP0AAAAAAAAAAABkARQnAQ' width=350 alt='img'/>
 
-### Configuration
-
-#### direction
+### layoutCfg.direction
 
 **Type**: String<br />**Options**: 'H' | 'V'<br />**Default**: 'H'<br />**Required**: false<br />**Description**: The direction of layout.
 
@@ -258,7 +260,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 <img src='https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*x-bVTLOD-BcAAAAAAAAAAABkARQnAQ' width=145 alt='img'/>
 
-#### getWidth
+### layoutCfg.getWidth
 
 **Type**: Number | Function<br />**Example**:
 
@@ -272,7 +274,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 **Required**: false<br />**Description**: The width of each node
 
-#### getHeight
+### layoutCfg.getHeight
 
 **Type**: Number | Function<br />**Example**:
 
@@ -286,7 +288,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 **Required**: false<br />**Description**: The height of each node
 
-#### getHGap
+### layoutCfg.getHGap
 
 **Type**: Number | Function<br />**Example**:
 
@@ -300,7 +302,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 **Default**: 18<br />**Required**: false<br />**Description**: The horizontal separation of nodes
 
-#### getVGap
+### layoutCfg.getVGap
 
 **Type**: Number | Function<br />**Example**:
 
@@ -314,7 +316,7 @@ Mindmap arranged the nodes with same depth on the same level. Different from com
 
 **Default**: 18<br />**Required**: false<br />**Description**: The vertical separation of nodes
 
-#### getSide
+### layoutCfg.getSide
 
 **Type**: Function<br />**Example**:
 

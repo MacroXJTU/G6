@@ -1,13 +1,13 @@
 ---
-title: animation
+title: 动画相关方法
 order: 10
 ---
 
-### positionsAnimate()
+### graph.positionsAnimate()
 
 根据当前数据中的节点位置，动画更新节点位置。将会使用 graph 上的 `animateCfg` 配置项作为动画行为的依据。
 
-### stopAnimate()
+### graph.stopAnimate()
 
 停止画布上的所有动画。
 
@@ -17,6 +17,6 @@ order: 10
 graph.stopAnimate();
 ```
 
-### isAnimating()
+### graph.isAnimating()
 
 判断当前是否有正在执行的动画。

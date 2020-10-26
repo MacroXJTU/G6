@@ -3,7 +3,7 @@ title: Zoom / Transform canvas
 order: 10
 ---
 
-### getZoom()
+### graph.getZoom()
 
 Get the current zoom ratio.
 
@@ -19,7 +19,7 @@ Get the current zoom ratio.
 const zoom = graph.getZoom();
 ```
 
-### changeSize(width, height)
+### graph.changeSize(width, height)
 
 Change the size of the canvas.
 
@@ -36,7 +36,7 @@ Change the size of the canvas.
 graph.changeSize(600, 350);
 ```
 
-### translate(dx, dy)
+### graph.translate(dx, dy)
 
 Move the canvas with **relative displacement**.
 
@@ -53,7 +53,7 @@ Move the canvas with **relative displacement**.
 graph.translate(100, 100);
 ```
 
-### moveTo(x, y)
+### graph.moveTo(x, y)
 
 Move the canvas to a **fixed position**.
 
@@ -70,7 +70,7 @@ Move the canvas to a **fixed position**.
 graph.moveTo(200, 300);
 ```
 
-### fitView(padding)
+### graph.fitView(padding)
 
 Fit the graph to the view port.
 
@@ -96,7 +96,7 @@ graph.fitView([20, 10]);
 graph.fitView([20, 10, 20, 15]);
 ```
 
-### fitCenter()
+### graph.fitCenter()
 
 _Supported by v3.5.1._ Translate the graph to align its center with the canvas.
 
@@ -105,4 +105,31 @@ _Supported by v3.5.1._ Translate the graph to align its center with the canvas.
 ```javascript
 // Call the following function after rendering and animation
 graph.fitCenter();
+```
+
+### graph.focusItem(item, animate, animateCfg)
+
+Move the graph to center at the item. This operation can be used as easing animation after searching a node.
+
+**Parameters**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| item | string / Object | true | The id or the instance of the item. |
+| animate | boolean | false | Whether move the graph with animation. If it is not assigned, animates following the graph's `animate`. |
+| animateCfg | Object | false | The animation's configuraiton. Its configurations can be found in [Basic Animation Docs](/en/docs/manual/advanced/animation#animatecfg). If it is not assigned, animates following the graph's `animateCfg`. |
+
+**Usage**
+
+```javascript
+graph.focusItem(item);
+
+// focus with animation
+graph.focusItem(item, true);
+
+// focus with animation and animation's configuration
+graph.focusItem(item, true, {
+  easing: 'easeCubic',
+  duration: 400,
+});
 ```

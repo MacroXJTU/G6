@@ -3,7 +3,7 @@ title: graph.find*
 order: 10
 ---
 
-### find(type, fn)
+### graph.find(type, fn)
 
 Find single item according to a rule.
 
@@ -27,7 +27,7 @@ const findNode = graph.find('node', (node) => {
 });
 ```
 
-### findById(id)
+### graph.findById(id)
 
 Find an item by id.
 
@@ -48,7 +48,7 @@ Find an item by id.
 const node = graph.findById('node');
 ```
 
-### findAll(type, fn)
+### graph.findAll(type, fn)
 
 Find all the items that match the rule.
 
@@ -72,7 +72,7 @@ const nodes = graph.findAll('node', (node) => {
 });
 ```
 
-### findAllByState(type, state)
+### graph.findAllByState(type, state)
 
 Find all the items whose value of state is true.
 

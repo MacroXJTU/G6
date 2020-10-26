@@ -1,9 +1,9 @@
 ---
-title: graph.clear() / destroy()
+title: 清除/销毁画布
 order: 10
 ---
 
-### clear()
+### graph.clear()
 
 清除画布元素。该方法一般用于清空数据源，重新设置数据源，重新 render 的场景，此时所有的图形都会被清除。
 
@@ -15,7 +15,7 @@ order: 10
 graph.clear();
 ```
 
-### destroy()
+### graph.destroy()
 
 销毁画布。
 

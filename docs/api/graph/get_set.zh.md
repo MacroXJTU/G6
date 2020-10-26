@@ -1,9 +1,9 @@
 ---
-title: graph.get*/set* 获取/设置
+title: 获取/设置元素或属性
 order: 10
 ---
 
-### getNodes()
+### graph.getNodes()
 
 获取图中所有节点的实例。
 
@@ -20,7 +20,7 @@ order: 10
 const nodes = graph.getNodes();
 ```
 
-### getEdges()
+### graph.getEdges()
 
 获取图中所有边的实例。
 
@@ -37,7 +37,7 @@ const nodes = graph.getNodes();
 const edges = graph.getEdges();
 ```
 
-### getCombos()
+### graph.getCombos()
 
 获取当前图中所有 combo 的实例。
 
@@ -52,7 +52,7 @@ const edges = graph.getEdges();
 const combos = graph.getCombos();
 ```
 
-### getComboChildren(combo)
+### graph.getComboChildren(combo)
 
 获取指定 combo 中所有的子节点及子 combo。
 
@@ -84,7 +84,7 @@ const elements: {
 } = graph.getComboChildren('combo1')
 ```
 
-### getNeighbors(node, type)
+### graph.getNeighbors(node, type)
 
 **参数**
 
@@ -104,7 +104,7 @@ const elements: {
 const neighbors = graph.getNeighbors('node1', 'source');
 ```
 
-### get(key)
+### graph.get(key)
 
 根据 key 获取属性值。
 
@@ -127,7 +127,7 @@ const canvas = graph.get('canvas');
 const autoPaint = graph.get('autoPaint');
 ```
 
-### set(key, val)
+### graph.set(key, val)
 
 设置属性值。
 
@@ -151,7 +151,7 @@ graph.set('customGroup', group);
 graph.set('nodeIdList', [1, 3, 5]);
 ```
 
-### getContainer()
+### graph.getContainer()
 
 获取 Graph 的 DOM 容器。
 
@@ -165,7 +165,7 @@ graph.set('nodeIdList', [1, 3, 5]);
 graph.getContainer();
 ```
 
-### getGroup()
+### graph.getGroup()
 
 获取 Graph 根[图形分组](/zh/docs/manual/advanced/keyconcept/graphics-group)。
 
@@ -179,7 +179,7 @@ graph.getContainer();
 graph.getGroup();
 ```
 
-### getMinZoom()
+### graph.getMinZoom()
 
 获取 graph 当前允许的最小缩放比例。
 
@@ -193,7 +193,7 @@ graph.getGroup();
 graph.getMinZoom();
 ```
 
-### setMinZoom(ratio)
+### graph.setMinZoom(ratio)
 
 设置 graph 当前允许的最小缩放比例。
 
@@ -209,7 +209,7 @@ graph.getMinZoom();
 graph.setMinZoom(0.001);
 ```
 
-### getMaxZoom()
+### graph.getMaxZoom()
 
 获取 graph 当前允许的最大缩放比例。
 
@@ -223,7 +223,7 @@ graph.setMinZoom(0.001);
 graph.getMaxZoom();
 ```
 
-### setMaxZoom(ratio)
+### graph.setMaxZoom(ratio)
 
 设置 graph 当前允许的最大缩放比例。
 
@@ -239,7 +239,7 @@ graph.getMaxZoom();
 graph.setMaxZoom(1000);
 ```
 
-### getWidth()
+### graph.getWidth()
 
 获取 graph 当前的宽度。
 
@@ -253,7 +253,7 @@ graph.setMaxZoom(1000);
 graph.getWidth();
 ```
 
-### getHeight()
+### graph.getHeight()
 
 获取 graph 当前的高度。
 
